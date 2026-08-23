@@ -1,0 +1,15 @@
+{
+  "short_name": "VideoHub",
+  "name": "YouTube Video Links Directory",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3c72",
+  "display": "standalone"
+}
