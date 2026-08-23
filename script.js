@@ -1,28 +1,49 @@
-// Yahan aap apne sare YouTube videos ke links aur details add kar sakte hain
 const youtubeLinks = [
     {
-        title: "Python Programming Full Course",
-        category: "Programming",
+        title: "Class 11 Chemistry example",
+        category: "Chemistry / Education",
         url: "https://www.youtube.com/watch?v=v001"
     },
     {
-        title: "Class 11 Maths - Complex Numbers",
-        category: "Mathematics",
+        title: "Invalid Link Test Example",
+        category: "Testing",
         url: "https://www.youtube.com/watch?v=v002"
     },
     {
-        title: "HTML & CSS Crash Course",
-        category: "Web Development",
+        title: "Invalid Link Test Example",
+        category: "Testing",
         url: "https://www.youtube.com/watch?v=v003"
+    },
+    {
+        title: "Invalid Link Test Example",
+        category: "Testing",
+        url: "invalid-link-here" // Ye link skip ho jayega
     }
 ];
 
-// Website par links load karne ka function
+// URL ko validate karne ka function
+function isValidURL(string) {
+    try {
+        const url = new URL(string);
+        return url.protocol === "http:" || url.protocol === "https:";
+    } catch (_) {
+        return false;  
+    }
+}
+
 function loadLinks() {
     const container = document.getElementById('links-container');
+    if (!container) return;
+    
     container.innerHTML = '';
 
     youtubeLinks.forEach(item => {
+        // Agar URL galat ya kharab hoga toh ye video skip ho jayega
+        if (!item.url || !isValidURL(item.url)) {
+            console.warn(`Skipped invalid link: ${item.title}`);
+            return; 
+        }
+
         const card = document.createElement('div');
         card.className = 'card';
 
@@ -40,5 +61,4 @@ function loadLinks() {
     });
 }
 
-// Page load hone par execution
 document.addEventListener('DOMContentLoaded', loadLinks);
