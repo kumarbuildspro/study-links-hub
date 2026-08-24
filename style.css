@@ -1,0 +1,222 @@
+:root {
+    /* --- Outer Container Customization --- */
+    --container-max-width: 900px;   
+
+    /* --- Card Customization Variables --- */
+    --card-width: 100%;             
+    --card-padding-v: 1.2rem;       
+    --card-padding-h: 1.5rem;       
+    --card-radius: 8px;             
+    --card-gap: 7rem;               
+
+    /* --- TEXT SIZES (Yahan se aap text ko bada ya chhota kar sakte hain) --- */
+    --title-size: 1.7rem;           /* Card ki Heading ka Size (e.g., 1.5rem, 2rem) */
+    --subtitle-size: 0.88rem;       /* Card ki Category ka Size (e.g., 0.8rem, 1rem) */
+    
+    /* --- HEADER TEXT SIZES --- */
+    --header-title-size: 2rem;      /* Sabse upar wale Title ka Size */
+    --header-p-size: 1rem;          /* Sabse upar wale Subtitle ka Size */
+
+    /* --- FOOTER CUSTOMIZATION --- */
+    --footer-font-size: 0.9rem;     /* Footer Text ka Size (Yahan se chhota/bada karein) */
+    --footer-padding-v: 0.8rem;     /* Footer Top-Bottom Padding */
+    --footer-bg: #222;              /* Footer Background Color */
+    --footer-color: #aaa;           /* Footer Text Color */
+
+    /* --- Button Customization --- */
+    --btn-padding-v: 0.9rem;        
+    --btn-padding-h: 1.2rem;        
+    --btn-font-size: 0.9rem;        
+    --btn-bg: #ff0000;              
+    --btn-hover-bg: #cc0000;        
+    --btn-radius: 5px;              
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    height: 100dvh; /* Mobile screens ke liye dynamic height taaki footer na chhupaye */
+    overflow: hidden; 
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f7f6;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    width: 100%;
+    margin: 0;
+    flex-shrink: 0; 
+}
+
+header h1 {
+    font-size: var(--header-title-size); /* Variable se control hoga */
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: var(--header-p-size);     /* Variable se control hoga */
+    opacity: 0.9;
+    width: 100%;
+    white-space: nowrap;
+}
+
+/* Beech ka container scrollable */
+.container {
+    max-width: var(--container-max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    flex: 1;
+    overflow-y: auto; 
+}
+
+.link-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Card Styling */
+.card {
+    background: white;
+    border-radius: var(--card-radius);
+    padding: var(--card-padding-v) var(--card-padding-h);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--card-gap);
+    width: var(--card-width);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-info h3 {
+    font-size: var(--title-size);
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+    word-wrap: break-word;
+}
+
+.card-info p {
+    font-size: var(--subtitle-size);
+    color: #666;
+}
+
+.btn-watch {
+    background-color: var(--btn-bg);
+    color: white;
+    text-decoration: none;
+    padding: var(--btn-padding-v) var(--btn-padding-h);
+    border-radius: var(--btn-radius);
+    font-weight: bold;
+    font-size: var(--btn-font-size);
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+}
+
+.btn-watch:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+/* Footer Styling with Variables */
+footer {
+    text-align: center;
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
+    width: 100%;
+    padding: var(--footer-padding-v) 1rem;
+    font-size: var(--footer-font-size); /* Yahan se size change hoga */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    flex-shrink: 0; 
+    position: relative;
+    z-index: 10;
+}
+
+/* Corner Floating Circle Button */
+.theme-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1e3c72;
+    color: white;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+/* --- Dark Mode Customization --- */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .card-info h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .card-info p {
+    color: #aaa;
+}
+
+body.dark-mode .theme-btn {
+    background-color: #333;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .btn-watch {
+        width: 100%;
+        text-align: center;
+    }
+}
