@@ -1,0 +1,208 @@
+:root {
+    /* --- Outer Container Customization --- */
+    --container-max-width: 900px;   /* Outer box/Main container ki max-width */
+
+    /* --- Card Customization Variables --- */
+    --card-width: 100%;             /* Card ki width */
+    --card-padding-v: 1.2rem;       /* Top-Bottom Padding */
+    --card-padding-h: 1.5rem;       /* Left-Right Padding */
+    --card-radius: 8px;             /* Corner Roundness */
+    --card-gap: 7rem;               /* Text aur Button ke beech ki doori */
+
+    /* --- Text Customization --- */
+    --title-size: 1.7rem;           /* Heading Text Size */
+    --subtitle-size: 0.88rem;       /* Category/Sub-text Size */
+
+    /* --- Button Customization --- */
+    --btn-padding-v: 0.9rem;        /* Button Top-Bottom Padding */
+    --btn-padding-h: 1.2rem;        /* Button Left-Right Padding */
+    --btn-font-size: 0.9rem;        /* Button Text Size */
+    --btn-bg: #ff0000;              /* Button Color */
+    --btn-hover-bg: #cc0000;        /* Hover Color */
+    --btn-radius: 5px;              /* Button Roundness */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    overflow: hidden; /* Main window scrolling off rahegi */
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f7f6;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    width: 100%;
+    margin: 0;
+    flex-shrink: 0; /* Header apni jagah fix rahega */
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+    width: 100%;
+    white-space: nowrap;
+}
+
+/* Beech ka container scrollable kar diya gaya hai */
+.container {
+    max-width: var(--container-max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    flex: 1;
+    overflow-y: auto; /* Sirf beech ka text/content scroll hoga */
+}
+
+.link-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Updated Customisable Card Styling */
+.card {
+    background: white;
+    border-radius: var(--card-radius);
+    padding: var(--card-padding-v) var(--card-padding-h);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--card-gap);
+    width: var(--card-width);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-info h3 {
+    font-size: var(--title-size);
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+    word-wrap: break-word;
+}
+
+.card-info p {
+    font-size: var(--subtitle-size);
+    color: #666;
+}
+
+.btn-watch {
+    background-color: var(--btn-bg);
+    color: white;
+    text-decoration: none;
+    padding: var(--btn-padding-v) var(--btn-padding-h);
+    border-radius: var(--btn-radius);
+    font-weight: bold;
+    font-size: var(--btn-font-size);
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+}
+
+.btn-watch:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+footer {
+    text-align: center;
+    background-color: #222;
+    color: #aaa;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    flex-shrink: 0; /* Footer apni jagah fix rahega */
+}
+
+/* Corner Floating Circle Button */
+.theme-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1e3c72;
+    color: white;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+/* --- Dark Mode CSS --- */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .card-info h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .card-info p {
+    color: #aaa;
+}
+
+body.dark-mode .theme-btn {
+    background-color: #333;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .btn-watch {
+        width: 100%;
+        text-align: center;
+    }
+}
