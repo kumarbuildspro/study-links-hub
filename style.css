@@ -30,8 +30,11 @@
 }
 
 html, body {
-    height: 100vh;
-    overflow: hidden; /* Main window scrolling off rahegi */
+    height: 100%;
+    height: 100dvh; /* Mobile screens ke liye dynamic height */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -140,10 +143,12 @@ footer {
     color: #aaa;
     width: 100%;
     padding: 0.8rem 1rem;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Font size thoda thik kar diya hai taaki mobile par fit aaye */
     font-weight: 500;
     letter-spacing: 0.5px;
-    flex-shrink: 0; /* Footer apni jagah fix rahega */
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
 }
 
 /* Corner Floating Circle Button */
