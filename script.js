@@ -10,9 +10,9 @@ const youtubeLinks = [
     url: "https://youtu.be/bZxAKA69xqg?si=_IE7mHgot-j0CXtc"
     },
     {
-        title: "Invalid Link Test Example",
-        category: "Testing",
-        url: "https://www.youtube.com/watch?v=v003"
+    title: "How to Become Dangerously Self Educated (Complete Plan)",
+    category: "Self Improvement / Education",
+    url: "https://youtu.be/s24ZVyURGBc?si=Qtp7D6BPGlzn45R-"
     },
     {
         title: "Invalid Link Test Example",
