@@ -1,8 +1,8 @@
 const youtubeLinks = [
     {
-        title: "Class 11 Chemistry example",
-        category: "Chemistry / Education",
-        url: "https://www.youtube.com/watch?v=v001"
+    title: "21 AI Tools That Will Make You Rich Before 2026",
+    category: "AI / Technology",
+    url: "https://youtu.be/jG9aLEawV7Y?si=2mq8dF4Aj5WtZ4T2"
     },
     {
         title: "Invalid Link Test Example",
