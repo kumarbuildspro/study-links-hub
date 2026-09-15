@@ -13,11 +13,6 @@ const youtubeLinks = [
         title: "How to Become Dangerously Self Educated (Complete Plan)",
         category: "Self Improvement / Education",
         url: "https://youtu.be/s24ZVyURGBc?si=Qtp7D6BPGlzn45R-"
-    },
-    {
-        title: "Invalid Link Test Example",
-        category: "Testing",
-        url: "invalid-link-here" // Ye link skip ho jayega
     }
 ];
 
