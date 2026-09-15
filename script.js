@@ -7,7 +7,7 @@ const youtubeLinks = [
     {
     title: "AI Complete OneShot Course | Learn AI & Deep Learning from Scratch",
     category: "AI / Technology",
-    url: "http://www.youtube.com/watch?v=bZxAKA69xqg"
+    url: "https://youtu.be/bZxAKA69xqg?si=_IE7mHgot-j0CXtc"
     },
     {
         title: "Invalid Link Test Example",
