@@ -5,9 +5,9 @@ const youtubeLinks = [
     url: "https://youtu.be/jG9aLEawV7Y?si=2mq8dF4Aj5WtZ4T2"
     },
     {
-        title: "Invalid Link Test Example",
-        category: "Testing",
-        url: "https://www.youtube.com/watch?v=v002"
+    title: "AI Complete OneShot Course | Learn AI & Deep Learning from Scratch",
+    category: "AI / Technology",
+    url: "http://www.youtube.com/watch?v=bZxAKA69xqg"
     },
     {
         title: "Invalid Link Test Example",
